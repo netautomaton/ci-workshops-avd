@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -84,6 +90,15 @@ local_users:
   sha512_password: $6$arista$OUaY1sw/fY.5RAHs052BltoMd56XeXgU52EL7lcX1NNOCd3FUDKhHvsK7NZRisoU1ZXEzkhQulvxHpApHfjbC0
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkxAZJiwY9KItTDy6D434N8gXySGchNqJWh51TK+/8k/6bughfBKBsGyGDcxJYxMYKZdIiky2QWJO3Z0LvlcybBLKqBrJlT8U4o/QIXJT8Gu1AHdZTmZ42AfW973fovlJ8U4yr68yyWwgM0l3lTdCqTFpErRVu91cLW4ULVQSmS8WKCSeBwpMGWOWto/ila8rl7ms0qg37n70XxRZBull1YwhMzocYeEBXYBZFR89E1SOvDcf8SHnNdciO/L3SG4V+9jicgDeB42OU9ettJmuy5sT2fU7y0IE/zKoNVIwQ+Y7Bem2nyv48XmCiaWKBL+v6GJPx1RhZrcnA6nxSsXOH
     arista@chris-qualcomm-test-1-cc52a719-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
